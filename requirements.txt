@@ -1,0 +1,8 @@
+gradio>=5.9.0
+sentence-transformers>=2.7.0
+chromadb>=0.5.3
+requests>=2.32.3
+numpy>=2.0.0
+torch>=2.5.0
+transformers>=4.42.0
+huggingface-hub>=0.24.0
