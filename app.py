@@ -1,13 +1,4 @@
-"""
-app.py
-Dharmic Intelligence Platform - Gradio application for HuggingFace Spaces.
-This is the entry point for deployment. HuggingFace Spaces looks for app.py
-and expects it to expose a Gradio interface bound to a public port.
-Architecture:
-  - Gradio 5.x for the UI (Python 3.13 compatible)
-  - RAGPipeline from rag_pipeline.py for retrieval and generation
-  - All state managed in module-level variables (Spaces is single-process)
-"""
+
 
 import json
 import os
@@ -21,8 +12,6 @@ from rag_pipeline import RAGPipeline
 # Module-level pipeline instance shared across all Gradio calls
 pipeline = RAGPipeline(hf_token=os.environ.get("HF_TOKEN", ""))
 
-# Custom CSS using the same palette as the original design
-# No emojis. No em dashes. Clean, professional typography.
 CUSTOM_CSS = """
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap');
 :root {
@@ -310,9 +299,7 @@ footer {
 """
 
 
-# ============================================================
 # HTML Rendering Helpers
-# ============================================================
 
 def render_wisdom_response(result: dict) -> str:
     """Render the RAG result as styled HTML for the Gradio output."""
@@ -467,9 +454,7 @@ def render_analytics_html(stats: dict) -> str:
     return f'<div style="display:flex;flex-wrap:wrap;gap:0.75rem;">{cards}</div>'
 
 
-# ============================================================
 # Gradio Event Handlers
-# ============================================================
 
 def initialize_system(hf_token_input: str) -> tuple[str, str, str, str]:
     """
@@ -550,9 +535,7 @@ def refresh_analytics() -> str:
     return render_analytics_html(pipeline.get_stats())
 
 
-# ============================================================
 # Gradio Interface
-# ============================================================
 
 HEADER_HTML = """
 <div class="dip-header">
