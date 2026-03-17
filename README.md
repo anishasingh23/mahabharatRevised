@@ -1,10 +1,4 @@
 ---
-TRY the demo -> https://aniisha-mahabharat1.hf.space/
-
-
-
-
-
 title: Dharmic Intelligence Platform
 emoji: 🏛️
 colorFrom: yellow
@@ -19,6 +13,8 @@ short_description: Mahabharata-grounded RAG for contemporary moral dilemmas
 
 
 # Dharmic Intelligence Platform
+
+DEMO -> https://aniisha-mahabharat1.hf.space/
 
 A retrieval-augmented generation system that answers contemporary moral dilemmas
 by surfacing relevant episodes from the Mahabharata and synthesizing character-voiced
